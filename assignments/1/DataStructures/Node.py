@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 2019-
+# 2019-1-18
 
 # A Python implementetation of a Node class
 class Node:

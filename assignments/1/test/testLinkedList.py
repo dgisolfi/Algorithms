@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # 2019-1-18
 
+import os
 import sys
 import pytest
-from src import LinkedList
+sys.path.append('...')
+print(os.getcwd())
+from DataStructures.LinkedList import LinkedList
 
 class TestLinkedList:
     new_list = LinkedList()
@@ -22,9 +25,21 @@ class TestLinkedList:
         self.new_list.addNode('node_2')
         size = self.new_list.length()
         assert size == 2
+        self.new_list.addNode('node_3')
+        self.new_list.addNode('node_4')
 
-    def testDelNode(self):
-        node = self.new_list.delNode
-        assert self.new_list.length() == 1
-        assert node.data == 'node_2'
+    def testStr(self):
+        print(self.new_list)
+
+    def testDelOldestNode(self):
+        node = self.new_list.delOldestNode()
+        assert self.new_list.length() == 3
+        assert node.data == 'node_1'
+
+    def testDelNewestNode(self):
+        node = self.new_list.delNewestNode()
+        assert self.new_list.length() == 2
+        assert node.data == 'node_4'
+    
+   
 
