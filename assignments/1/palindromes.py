@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# 2019-1-18
+
 import requests
 from DataStructures.Queue import Queue
 from DataStructures.Stack import Stack
@@ -34,26 +37,21 @@ class Palindrome:
         return q
 
     def checkForPalindrone(self):
-        
         for item in self.magicitems:
-            match = False
-            stacked_item = self.stackChars(item)
-            queued_item = self.queueChars(item)
-            
-            for i in range(len(item)):
-                s_char = stacked_item.pop()
-                q_char = queued_item.dequeue()
-                if s_char == q_char:
-                    match = True
-                else:
-                    match = False
+            magic_item = item.lower()
+            magic_item = ''.join(magic_item.split())
+            stacked_item = self.stackChars(magic_item)
+            queued_item = self.queueChars(magic_item)
 
-            if match:
+            s_word = ''
+            q_word = ''
+            for i in range(len(magic_item)):
+                # print(stacked_item.length(), queued_item.length())
+                s_word += stacked_item.pop()
+                q_word += queued_item.dequeue()
+
+            if s_word == q_word:
                 self.palindrones.append(item)
-
-
-
-
 
 if __name__ == "__main__":
    palindrome = Palindrome()
