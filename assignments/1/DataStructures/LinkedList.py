@@ -44,7 +44,7 @@ class LinkedList:
     def delNewestNode(self):
         node = self.head
         self.head = node.pointer
-        return node
+        return node.data
 
      # Delete First Node in list(the one pointing to Null)
     def delOldestNode(self):
@@ -55,7 +55,7 @@ class LinkedList:
             if node.pointer is None:
                 oldest_node = node
                 prev_node.pointer = None
-                return oldest_node
+                return oldest_node.data
             prev_node = node
             node = node.pointer
 
@@ -74,23 +74,3 @@ class LinkedList:
         if node.data is not None:
             size += 1
         return size
-
-
-
-      # node = self.__head
-        # if node is None:
-        #     return
-        # # node is head
-        # if node.data is value:
-        #     self.head = node.pointer
-        #     del node
-
-        # # Search through list for node
-        # while node.pointer is not None:
-        #     if node.data is value:
-        #         break
-        #     prev_node = node
-        #     node = node.pointer
-
-        # prev_node.pointer = node.pointer 
-        # del node

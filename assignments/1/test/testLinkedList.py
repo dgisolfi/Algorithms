@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # 2019-1-18
 
-import os
-import sys
 import pytest
-sys.path.append('...')
-print(os.getcwd())
 from DataStructures.LinkedList import LinkedList
 
 class TestLinkedList:
@@ -34,12 +30,12 @@ class TestLinkedList:
     def testDelOldestNode(self):
         node = self.new_list.delOldestNode()
         assert self.new_list.length() == 3
-        assert node.data == 'node_1'
+        assert node == 'node_1'
 
     def testDelNewestNode(self):
         node = self.new_list.delNewestNode()
         assert self.new_list.length() == 2
-        assert node.data == 'node_4'
+        assert node == 'node_4'
     
    
 

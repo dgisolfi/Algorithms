@@ -32,10 +32,10 @@ class Stack:
 
     # Returns the object at the top of the Stack without removing it.
     def peek(self):
-        return self.__stack.head()
+        return self.__stack.head.data
 
     def clear(self):
         self.__stack = LinkedList()
     
     def length(self):
-        return self.__stack.length
+        return self.__stack.length()

@@ -29,6 +29,6 @@ class Queue:
         return self.__queue.delOldestNode()
 
     def length(self):
-        return self.__queue.length
+        return self.__queue.length()
 
     
