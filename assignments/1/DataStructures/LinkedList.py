@@ -50,11 +50,12 @@ class LinkedList:
     def delOldestNode(self):
         oldest_node = object
         node = self.__head
-        prev_node = object
+        prev_node = node
         while(node):
             if node.pointer is None:
                 oldest_node = node
-                prev_node.pointer = None
+                if prev_node is not None:
+                    prev_node.pointer = None
                 return oldest_node.data
             prev_node = node
             node = node.pointer

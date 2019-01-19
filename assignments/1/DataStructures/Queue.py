@@ -6,7 +6,7 @@ from .LinkedList import LinkedList
 # A Python implementetation of a 
 # Queue using a linked list
 class Queue:
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         self.__queue = LinkedList()
 
     def __str__(self):
