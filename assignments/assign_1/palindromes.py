@@ -46,7 +46,6 @@ class Palindrome:
             s_word = ''
             q_word = ''
             for i in range(len(magic_item)):
-                # print(stacked_item.length(), queued_item.length())
                 s_word += stacked_item.pop()
                 q_word += queued_item.dequeue()
 

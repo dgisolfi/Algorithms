@@ -9,6 +9,6 @@ clean:
 
 # TESTS
 test_assignment_1:
-	@python3 -m pytest -s ./assignments/1/test/testLinkedList.py
+	@python3 -m pytest -s ./assignments/1/test/testPalindrone.py
 
 .PHONY: init test
