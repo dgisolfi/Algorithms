@@ -1,27 +1,36 @@
 #!/usr/bin/env python3
 # 2019-1-18
-
+import time
 import requests
 from DataStructures.Queue import Queue
 from DataStructures.Stack import Stack
 
 class Palindrome:
     def __init__(self):
-        self.magicitems =[]
+        self.magicitems = []
         self.palindrones = []
 
     def getMagicItems(self):
-        try:
-            session = requests.Session()
-            response = session.get('http://labouseur.com/courses/algorithms/magicitems.txt')
-            if response.status_code != 200:
-                raise ValueError(f'ERROR: issue retriving data, status code for request: {response.status_code}')
+        # try:
+        #     session = requests.Session()
+        #     response = session.get('http://labouseur.com/courses/algorithms/magicitems.txt')
+        #     if response.status_code != 200:
+        #         raise ValueError(f'ERROR: issue retriving data, status code for request: {response.status_code}')
 
-            for item in response.text.splitlines():
+        #     for item in response.text.splitlines():
+        #         self.magicitems.append(item)
+
+        # except:
+        #     raise ValueError('Request to retrieve magic items failed!')
+
+        try:
+            file = open('./big.txt')
+            items = file.read().splitlines()
+            for item in items:
                 self.magicitems.append(item)
 
         except:
-            raise ValueError('Request to retrieve magic items failed!')
+            raise ValueError('File not found')
 
     
     def stackChars(self, item):

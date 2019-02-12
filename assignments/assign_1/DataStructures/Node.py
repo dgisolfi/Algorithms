@@ -8,6 +8,7 @@ class Node:
         self.__pointer = pointer
     
     @property
+    # data => Element to be stored
     def data(self):
         return self.__data
 
@@ -16,6 +17,7 @@ class Node:
         self.__data = element
     
     @property
+    # pointer => next element in linked list
     def pointer(self):
         return self.__pointer
 

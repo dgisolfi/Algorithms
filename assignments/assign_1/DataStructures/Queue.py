@@ -27,6 +27,10 @@ class Queue:
 
     def dequeue(self):
         return self.__queue.delOldestNode()
+    
+    # Returns the object at the top of the Queue without removing it.
+    def peek(self):
+        return self.__queue.head.data
 
     def length(self):
         return self.__queue.length()

@@ -21,5 +21,10 @@ class TestQueue:
         # Should be the first element added to queue
         assert message == 'msg_1'
 
+    def testPeek(self):
+        peeked_message = self.q.peek()
+        message = message = self.q.dequeue()
+        assert message == peeked_message
+
     def testQueuePrint(self):
         print(self.q)
