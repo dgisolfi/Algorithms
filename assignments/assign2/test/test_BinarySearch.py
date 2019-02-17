@@ -7,15 +7,15 @@ import pytest
 import random
 sys.path.append('.')
 from Sorts.Merge import MergeSort
-from Searches.Linear import LinearSearch
+from Searches.Binary import BinarySearch
 
-class TestLinearSearch:
+class TestBinarySearch:
     items = []
     try:
         items = open('./test/MagicItems.txt').read().splitlines() 
     except:
         raise ValueError('File not found')
-
+    
     # Sort the Elements of the list
     merge = MergeSort(items)
     items = merge.sort()
@@ -28,11 +28,11 @@ class TestLinearSearch:
     comparisons = []
 
     for desired_item in randomly_selected_items:
-        linear = LinearSearch(items, desired_item)
-        location = linear.search()
-        comparisons.append(linear.comparisons)
+        binary = BinarySearch(items, desired_item)
+        location = binary.search()
+        comparisons.append(binary.comparisons)
         print(f'Found "{desired_item}" at index: {location}'
-        + f' in list after {linear.comparisons} comparisons')
+        + f' in list after {binary.comparisons} comparisons')
     
     # compute the average comparisons needed to find the item
     average = sum(comparisons)/len(comparisons)
