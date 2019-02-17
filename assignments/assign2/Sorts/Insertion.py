@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 # 2019-1-22
 
-import sys
-
 class InsertionSort:
     def __init__(self, elements):
         self.elements = elements
-        self.sorted_elements = []
-        self.sort()
 
     def sort(self):
         # Loop through all elements of the array

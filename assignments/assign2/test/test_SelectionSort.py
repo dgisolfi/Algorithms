@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-# 2019-1-18
+# 2019-2-17
 
 import os
 import sys
 import pytest
 sys.path.append('.')
-from Sorts.Insertion import InsertionSort
+from Sorts.Selection import SelectionSort
 
 class TestInsertionSort:
     items = []
@@ -14,6 +14,6 @@ class TestInsertionSort:
     except:
         raise ValueError('File not found')
 
-    insertion = InsertionSort(items)
-    sorted_items = insertion.sort()
+    selection = SelectionSort(items)
+    sorted_items = selection.sort()
     print(sorted_items)
