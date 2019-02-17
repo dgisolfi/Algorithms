@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 2019-1-22
+# 2019-2-17
 
 class InsertionSort:
     def __init__(self, elements):

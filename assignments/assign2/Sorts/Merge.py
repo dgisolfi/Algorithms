@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# 2019-2-17
+
 class MergeSort:
     def __init__(self, elements):
         self.elements = elements

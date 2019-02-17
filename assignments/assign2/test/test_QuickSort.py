@@ -5,7 +5,7 @@ import os
 import sys
 import pytest
 sys.path.append('.')
-from Sorts.Merge import MergeSort
+from Sorts.Quick import QuickSort
 
 class TestMergeSort:
     items = []
@@ -14,6 +14,6 @@ class TestMergeSort:
     except:
         raise ValueError('File not found')
 
-    merge = MergeSort(items)
-    sorted_items = merge.sort()
-    print(sorted_items, merge.swaps)
+    quick = QuickSort(items)
+    sorted_items = quick.sort()
+    print(sorted_items, quick.swaps)
