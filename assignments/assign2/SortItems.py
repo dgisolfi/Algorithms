@@ -28,15 +28,8 @@ class Sort:
         except:
             raise ValueError('Request to retrieve magic items failed!')
 
-    def InsertSort(self):
-      
-        nums = LinkedList()
-        nums.addNode(4)
-        nums.addNode(3)
-        nums.addNode(9)
-        nums.addNode(5)
-        nums.addNode(7)
-        nums = insertionSort(nums)
+    # def InsertSort(self):
+
 
 
 

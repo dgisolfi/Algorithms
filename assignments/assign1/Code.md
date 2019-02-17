@@ -201,3 +201,65 @@ class Stack:
     def length(self):
         return self.__stack.length()
 ```
+
+`Palindrones.py`
+
+```python
+#!/usr/bin/env python3
+# 2019-1-18
+import time
+import requests
+from DataStructures.Queue import Queue
+from DataStructures.Stack import Stack
+
+class Palindrome:
+    def __init__(self):
+        self.magicitems = []
+        self.palindrones = []
+
+    def getMagicItems(self):
+        try:
+            file = open('./MagicItems.txt')
+            items = file.read().splitlines()
+            for item in items:
+                self.magicitems.append(item)
+
+        except:
+            raise ValueError('File not found')
+
+    
+    def stackChars(self, item):
+        s = Stack()
+        for char in list(item):
+            s.push(char)
+        return s
+        
+    def queueChars(self, item):
+        q = Queue()
+        for char in list(item):
+            q.enqueue(char)
+        return q
+
+    def checkForPalindrone(self):
+        for item in self.magicitems:
+            magic_item = item.lower()
+            magic_item = ''.join(magic_item.split())
+            stacked_item = self.stackChars(magic_item)
+            queued_item = self.queueChars(magic_item)
+
+            s_word = ''
+            q_word = ''
+            for i in range(len(magic_item)):
+                s_word += stacked_item.pop()
+                q_word += queued_item.dequeue()
+
+            if s_word == q_word:
+                self.palindrones.append(item)
+
+if __name__ == "__main__":
+   palindrome = Palindrome()
+   palindrome.getMagicItems()
+   palindrome.checkForPalindrone()
+   print(palindrome.palindrones)
+```
+
