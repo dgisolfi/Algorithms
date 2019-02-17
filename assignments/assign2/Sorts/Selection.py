@@ -4,6 +4,11 @@
 class SelectionSort:
     def __init__(self, elements):
         self.elements = elements
+        self.__swaps = 0
+
+    @property
+    def swaps(self):
+        return self.__swaps
 
     def sort(self):
         for item in range(0,len(self.elements)-1):
@@ -22,6 +27,7 @@ class SelectionSort:
                 temp = self.elements[item]
                 self.elements[item] = self.elements[minimum]
                 self.elements[minimum] = temp
+                self.__swaps += 1
 
         return self.elements
                 

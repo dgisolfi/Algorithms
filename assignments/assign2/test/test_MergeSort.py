@@ -5,15 +5,15 @@ import os
 import sys
 import pytest
 sys.path.append('.')
-from Sorts.Insertion import InsertionSort
+from Sorts.Merge import MergeSort
 
-class TestInsertionSort:
+class TestMergeSort:
     items = []
     try:
         items = open('./test/MagicItems.txt').read().splitlines() 
     except:
         raise ValueError('File not found')
 
-    insertion = InsertionSort(items)
-    sorted_items = insertion.sort()
-    print(sorted_items, insertion.swaps)
+    merge = MergeSort(items)
+    sorted_items = merge.sort()
+    print(sorted_items, merge.swaps)

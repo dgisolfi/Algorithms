@@ -7,7 +7,7 @@ import pytest
 sys.path.append('.')
 from Sorts.Selection import SelectionSort
 
-class TestInsertionSort:
+class TestSelectionSort:
     items = []
     try:
         items = open('./test/MagicItems.txt').read().splitlines() 
@@ -16,4 +16,4 @@ class TestInsertionSort:
 
     selection = SelectionSort(items)
     sorted_items = selection.sort()
-    print(sorted_items)
+    print(sorted_items, selection.swaps)
