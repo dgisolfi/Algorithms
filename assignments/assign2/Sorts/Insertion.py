@@ -24,5 +24,6 @@ class InsertionSort:
                 self.__swaps += 1  
                 prev_item -= 1
             # Return the stored element to the list
+            self.__swaps += 1  
             self.elements[prev_item] = temp
         return self.elements

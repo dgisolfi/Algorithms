@@ -12,7 +12,7 @@ from Searches.Binary import BinarySearch
 class TestBinarySearch:
     items = []
     try:
-        items = open('./test/MagicItems.txt').read().splitlines() 
+        items = open('./MagicItems.txt').read().splitlines() 
     except:
         raise ValueError('File not found')
     
