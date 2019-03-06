@@ -16,6 +16,7 @@ class QuickSort:
         return self.quickSort(self.elements, 0, len(self.elements))
 
     def quickSort(self, items, low, high):
+
         # store the pivot and run quicksort on the left and right
         if low < high:
             # Pivot is used to find the upper and lower bounds of the partioned lists

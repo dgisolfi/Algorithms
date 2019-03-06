@@ -10,7 +10,7 @@ from Sorts.Selection import SelectionSort
 class TestSelectionSort:
     items = []
     try:
-        items = open('./test/LotsOfWords.txt').read().splitlines() 
+        items = open('./test/MagicItems.txt').read().splitlines() 
     except:
         raise ValueError('File not found')
 
