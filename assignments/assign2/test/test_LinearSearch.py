@@ -19,11 +19,13 @@ class TestLinearSearch:
     # Sort the Elements of the list
     merge = MergeSort(items)
     items = merge.sort()
+    print(f'Fuck:{len(items)}')
 
     randomly_selected_items = []
     # Choose 42 random Items of the file
     for i in range(0,42):
         randomly_selected_items.append(random.choice(items))
+        
 
     comparisons = []
 
@@ -35,5 +37,5 @@ class TestLinearSearch:
         + f' in list after {linear.comparisons} comparisons')
     
     # compute the average comparisons needed to find the item
-    average = sum(comparisons)/len(comparisons)
+    average = round(sum(comparisons)/len(comparisons), 2)
     print(f'The average case for all 42 searches was {average} comparisons')

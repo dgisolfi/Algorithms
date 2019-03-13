@@ -4,11 +4,11 @@
 class QuickSort:
     def __init__(self, elements):
         self.elements = elements
-        self.__swaps = 0
+        self.__comparisons = 0
 
     @property
-    def swaps(self):
-        return self.__swaps 
+    def comparisons(self):
+        return self.__comparisons 
 
     def sort(self):
         # Start by runing quicksort on the arr with the upper and 
@@ -16,7 +16,6 @@ class QuickSort:
         return self.quickSort(self.elements, 0, len(self.elements))
 
     def quickSort(self, items, low, high):
-
         # store the pivot and run quicksort on the left and right
         if low < high:
             # Pivot is used to find the upper and lower bounds of the partioned lists
@@ -34,6 +33,7 @@ class QuickSort:
         # From left to right run comparisons on each
         for i in range(low+1,high):
             # Check the lowercase version and swap if needed
+            self.__comparisons += 1
             if items[i].lower() < pivot.lower():
                 items = self.swap(items, i, left)
                 # We can move to the right by 1
@@ -47,5 +47,4 @@ class QuickSort:
         temp = arr[pos_1]
         arr[pos_1] = arr[pos_2]
         arr[pos_2] = temp
-        self.__swaps += 1
         return arr

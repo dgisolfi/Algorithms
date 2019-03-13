@@ -10,9 +10,16 @@ class LinearSearch:
     @property
     def comparisons(self):
         return self.__comparisons
-    
+
     def search(self):
-        for index, item in enumerate(self.elements):
+        itemNotFound = True
+        index = 0
+        while itemNotFound:
+            item = self.elements[index]
             self.__comparisons += 1
             if item is self.desired_item:
-                return index
+                itemNotFound = False
+            else:
+                index += 1
+
+        return index

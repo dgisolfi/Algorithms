@@ -4,11 +4,11 @@
 class InsertionSort:
     def __init__(self, elements):
         self.elements = elements
-        self.__swaps = 0
+        self.__comparisons = 0
 
     @property
-    def swaps(self):
-        return self.__swaps
+    def comparisons(self):
+        return self.__comparisons
 
     def sort(self):
         # Loop through all elements of the array
@@ -21,9 +21,8 @@ class InsertionSort:
             while prev_item > 0 and self.elements[prev_item-1].lower() > temp:
                 # Swap the compared elements
                 self.elements[prev_item] = self.elements[prev_item-1]
-                self.__swaps += 1  
+                self.__comparisons += 1  
                 prev_item -= 1
             # Return the stored element to the list
-            self.__swaps += 1  
             self.elements[prev_item] = temp
         return self.elements

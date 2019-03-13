@@ -16,4 +16,4 @@ class TestInsertionSort:
 
     insertion = InsertionSort(items)
     sorted_items = insertion.sort()
-    print(sorted_items, insertion.swaps)
+    print(insertion.comparisons)

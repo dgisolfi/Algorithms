@@ -12,7 +12,7 @@ from Searches.Binary import BinarySearch
 class TestBinarySearch:
     items = []
     try:
-        items = open('./MagicItems.txt').read().splitlines() 
+        items = open('./test/MagicItems.txt').read().splitlines() 
     except:
         raise ValueError('File not found')
     
@@ -35,5 +35,5 @@ class TestBinarySearch:
         + f' in list after {binary.comparisons} comparisons')
     
     # compute the average comparisons needed to find the item
-    average = sum(comparisons)/len(comparisons)
+    average = round(sum(comparisons)/len(comparisons), 2)
     print(f'The average case for all 42 searches was {average} comparisons')

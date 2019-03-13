@@ -4,11 +4,11 @@
 class SelectionSort:
     def __init__(self, elements):
         self.elements = elements
-        self.__swaps = 0
+        self.__comparisons = 0
 
     @property
-    def swaps(self):
-        return self.__swaps
+    def comparisons(self):
+        return self.__comparisons
 
     def sort(self):
         for item in range(0,len(self.elements)-1):
@@ -18,6 +18,7 @@ class SelectionSort:
             i = minimum + 1
             while i < len(self.elements):
                 # Check if the (lower case version) next item is lower then the current min
+                self.__comparisons += 1
                 if self.elements[i].lower() < self.elements[minimum].lower():
                     minimum = i
                 i += 1
@@ -27,7 +28,6 @@ class SelectionSort:
                 temp = self.elements[item]
                 self.elements[item] = self.elements[minimum]
                 self.elements[minimum] = temp
-                self.__swaps += 1
 
         return self.elements
                 

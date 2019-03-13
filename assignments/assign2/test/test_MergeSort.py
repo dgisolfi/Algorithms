@@ -16,4 +16,4 @@ class TestMergeSort:
 
     merge = MergeSort(items)
     sorted_items = merge.sort()
-    print(sorted_items, merge.swaps)
+    print(merge.comparisons)

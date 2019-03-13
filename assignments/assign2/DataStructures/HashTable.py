@@ -7,6 +7,7 @@ class HashTable:
     def __init__(self, size):
         self.__table = [None] * size
         self.__keys = []
+        self.__comparisons = 0
 
     def __repr__(self):
         return str(self.__table)
@@ -20,6 +21,14 @@ class HashTable:
             return False
 
     @property
+    def comparisons(self):
+        return self.__comparisons
+
+    @comparisons.setter
+    def setComparisons(self, val):
+        self.__comparisons = val
+
+    @property
     def keys(self):
         return self.__keys
 
@@ -28,8 +37,18 @@ class HashTable:
         return len(self.__table)
 
     ''' Methods '''
-    def get(self, key):
-        return self.__table[key]
+    def get(self, obj):
+        key = self.__findKey(obj)
+        value = self.__table[key]
+        # Traverse the linked list and return the object found there
+        if value is not None:
+            node = value.head
+            while node is not None:
+                self.__comparisons += 1
+                if node == obj:
+                    return node.data
+                else:
+                    node = node.pointer
     
     # Returns the key where it was placed
     def put(self, value):

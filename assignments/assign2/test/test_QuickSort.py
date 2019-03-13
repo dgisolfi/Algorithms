@@ -16,4 +16,4 @@ class TestMergeSort:
 
     quick = QuickSort(items)
     sorted_items = quick.sort()
-    print(sorted_items, quick.swaps)
+    print(quick.comparisons)

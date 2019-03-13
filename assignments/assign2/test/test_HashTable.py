@@ -15,7 +15,9 @@ class TestInsertionSort:
     except:
         raise ValueError('File not found')
 
-    hashtable = HashTable(len(items))
+    # Create a instance of my hash 
+    # table to the specified length
+    hashtable = HashTable(255)
     for item in items:
         key = hashtable.put(item)
 
@@ -25,16 +27,18 @@ class TestInsertionSort:
     for i in range(0,42):
         randomly_selected_items.append(random.choice(items))
 
-    
-    lookups = 0
+    comparison_results = []
+
     for desired_item in randomly_selected_items:
-        # hashtable.get()
-        lookups += 1
+        hashtable.get(desired_item)
+        gets_n_comparisons = 1 + hashtable.comparisons
+        comparison_results.append(gets_n_comparisons)
+        # reset comparison counter
+        hashtable.setComparisons = 0
         
-        print(f'Found "{desired_item}" at index: location'
-        + f' in list after {lookups} comparisons')
+        print(f'Found "{desired_item}" in list after {gets_n_comparisons} lookups and comparisons')
     
     # compute the average comparisons needed to find the item
-    # average = sum(comparisons)/len(comparisons)
+    average = sum(comparison_results)/len(comparison_results)
     print(f'The average case for all 42 searches was {average} comparisons')
    

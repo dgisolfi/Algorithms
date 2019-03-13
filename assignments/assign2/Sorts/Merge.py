@@ -4,11 +4,11 @@
 class MergeSort:
     def __init__(self, elements):
         self.elements = elements
-        self.__swaps = 0
+        self.__comparisons = 0
 
     @property
-    def swaps(self):
-        return self.__swaps
+    def comparisons(self):
+        return self.__comparisons
 
     def sort(self):
         return self.mergeSort(self.elements)
@@ -20,7 +20,7 @@ class MergeSort:
         # Split the array in half
         array_1 = items[:int(len(items)/2)]
         # Add 1 to avoid an imperfect split
-        array_2 = items[int(len(items)/2+1):]
+        array_2 = items[int(len(items)/2):]
 
         # Preform a merge sort on the split arrays
         array_1 = self.mergeSort(array_1)        
@@ -35,7 +35,7 @@ class MergeSort:
         # and add the lower element to the results, 
         # removing the element afterwards
         while len(a) > 0 and len(b) > 0:
-            self.__swaps += 1
+            self.__comparisons += 1
             if a[0].lower() > b[0].lower():
                 results.append(b[0])
                 del b[0]
@@ -54,5 +54,3 @@ class MergeSort:
             del b[0]
 
         return results
-
-

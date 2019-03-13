@@ -16,4 +16,4 @@ class TestSelectionSort:
 
     selection = SelectionSort(items)
     sorted_items = selection.sort()
-    print(sorted_items, selection.swaps)
+    print(selection.comparisons)
