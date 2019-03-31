@@ -4,7 +4,6 @@
 import sys
 from parser import Parser
 sys.path.append('.')
-
 from LinkedObjectGraph.ObjectGraph import ObjectGraph
 
 parser = Parser('./test/graphs.txt')

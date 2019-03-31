@@ -2,26 +2,24 @@
 # 2019-3-31
 
 import re
-from .graph import Graph
 
-
-class ObjectGraph:
+class AdjacencyList:
     def __init__(self, commands):
         self.__commands = commands
-        self.graph = Graph()
-        self.buildGraph()
-
+        self.__graph = {}
+        self.buildList()
+    
     def __str__(self):
-        self.depthFirstTraversal()
+        for vertex in self.__graph:
+            print(f'{vertex}\t {self.__graph[vertex]}')
         return ''
     
-
-    def buildGraph(self):
+    def buildList(self):
         for cmd in self.__commands:
             if re.match(r'add vertex .*', cmd):
                 try:
                     identifier = re.sub(r'add vertex', '', cmd)
-                    self.graph.addVertex(identifier.strip())
+                    self.__graph[identifier.strip()] = set()
                 except UnboundLocalError:
                     print('You must define a new graph before adding a vertex.')
             
@@ -29,13 +27,7 @@ class ObjectGraph:
                 try:
                     edge_vals = re.sub(r'add edge', '', cmd)
                     values = edge_vals.split('-')
-                    self.graph.addEdge(values[0].strip(), values[1].strip())
+                    self.__graph[values[0].strip()].add(values[1].strip())
+                    self.__graph[values[1].strip()].add(values[0].strip())
                 except UnboundLocalError:
                     print('You must define a new graph before adding an edge.')
-
-
-    def depthFirstTraversal(self):
-        for vertex in self.graph.vertices:
-            print(f'[{vertex.id}]')
-            for conn in vertex.connections:
-                print(f'\t{conn}')
