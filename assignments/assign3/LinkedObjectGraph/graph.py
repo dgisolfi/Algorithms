@@ -18,7 +18,6 @@ class Graph:
     
     def getVertex(self, identifier):
         for vertex in self.__vertices:
-            # print(vertex.id, identifier, vertex.id == identifier)
             if vertex.id == identifier:
                 return vertex
 
