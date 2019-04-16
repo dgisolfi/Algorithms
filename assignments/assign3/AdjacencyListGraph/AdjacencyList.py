@@ -11,7 +11,10 @@ class AdjacencyList:
     
     def __str__(self):
         for vertex in self.__graph:
-            print(f'{vertex}\t {self.__graph[vertex]}')
+            value = self.__graph[vertex]
+            if len(value) is 0:
+                value = '{}'
+            print(f'{vertex}\t {value}')
         return ''
 
     ''' Properties '''

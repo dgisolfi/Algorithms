@@ -383,8 +383,9 @@ class HashTable:
 
 
 
-| Data Stuctures | Comparisons |   Asymptotic   |
-| :------------: | :---------: | :------------: |
-|   Hash Table   |      5      | Ω(1) ϴ(1) O(n) |
+| Data Stuctures | Comparisons |      Asymptotic      |
+| :------------: | :---------: | :------------------: |
+|   Hash Table   |     4-5     | Ω(1+ α) ϴ(1+ α) O(n) |
 
 **Hash Table** - In its best case the first get is the element we are searching for, this is also the average case. However, in its worst case, it takes n lookups to find the element due to searching through linked lists
+

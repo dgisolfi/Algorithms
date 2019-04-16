@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# 2019-2-17
+# 2019-3-31
 
 import os
 import sys
@@ -7,9 +7,6 @@ import pytest
 import random
 sys.path.append('.')
 from BinarySearchTree.BinarySearch import BinarySearchTree
-
-sys.path.append('..')
-from assign2.Sorts.Merge import MergeSort
 
 class TestBinarySearchTree:
     items = []

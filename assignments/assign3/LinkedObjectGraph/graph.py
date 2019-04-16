@@ -22,5 +22,5 @@ class Graph:
                 return vertex
 
     def addEdge(self, vertex_1, vertex_2):
-        self.getVertex(vertex_1).addConnection(vertex_2)
-        self.getVertex(vertex_2).addConnection(vertex_1)
+        self.getVertex(vertex_1).addConnection(self.getVertex(vertex_2))
+        self.getVertex(vertex_2).addConnection(self.getVertex(vertex_1))
