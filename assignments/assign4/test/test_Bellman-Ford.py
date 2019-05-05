@@ -5,11 +5,17 @@ import sys
 sys.path.append('..')
 from assign4.parser import Parser
 from assign4.DirectedGraph.DirectedGraph import DirectedGraph
+from assign4.BellmanFord import BellmanFord
 
 parser = Parser('./test/graphs2.txt')
 
-for graph in parser.graph_commands:
+for cmds in parser.graph_commands:
     print('NEW GRAPH')
-    directedGraph = DirectedGraph(graph)
+    directedGraph = DirectedGraph(cmds)
     print(directedGraph)
-    print('-----------------------')
+    graph = directedGraph.graph
+
+    bellmanFord = BellmanFord(graph, graph.vertices[0])
+    print(bellmanFord)
+
+

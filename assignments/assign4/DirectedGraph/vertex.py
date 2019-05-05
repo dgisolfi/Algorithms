@@ -16,10 +16,6 @@ class Vertex:
     def setId(self, new_id):
         self.__id = new_id
 
-    # @property
-    # def degree(self):
-    #     return len(self.__connections)
-
     @property
     def distance(self):
         return self.__distance

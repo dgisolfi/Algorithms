@@ -37,8 +37,3 @@ class Graph:
 
     def addEdge(self, source, target, weight):
         self.edges.append(Edge(source, target, weight))
-
-    # def addEdge(self, vertex_1, vertex_2, weight):
-    #     self.getVertex(vertex_1).addConnection(self.getVertex(vertex_2))
-    #     self.getVertex(vertex_2).addConnection(self.getVertex(vertex_1))
-    #     self.__edges.append(f'{vertex_1}=>{vertex_2} weight={weight}')
