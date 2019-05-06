@@ -5,17 +5,17 @@ import sys
 sys.path.append('..')
 from assign4.FractionalKnapsack.parser import Parser
 from assign4.FractionalKnapsack.GreedyAlgorithm import GreedyAlgorithm
+from assign4.FractionalKnapsack.SelectionSort import SelectionSort
 
 parser = Parser('./test/spice.txt')
 
-print(parser.spices)
-
-parser.spices.deleteTail()
-
-print(parser.spices)
-
+spices = parser.spices
+print(spices)
+# Sort the spices
+sort = SelectionSort(spices)
+spices = sort.elements
 
 for knapsack in parser.knapsacks:
     # alert of new knapsack
-    # print(f'Preforming greedy solution on Fractional Knapsack with {knapsack}')
-    pass
+    print(f'Preforming greedy solution on Fractional Knapsack with {knapsack}')
+    greedy = GreedyAlgorithm(parser.spices, knapsack)

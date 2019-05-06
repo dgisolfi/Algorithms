@@ -62,11 +62,9 @@ class Parser:
             if re.match(r'^spice.*', cmd):
                 cmd = cmd.replace('spice', '').replace(';', '')
                 attributes = cmd.split()
-
                 name = attributes[0].split('=')[1]
                 price = attributes[1].split('=')[1]
                 quantity = attributes[2].split('=')[1]
-                
                 self.spices.append(Spice(name, price, quantity))
             
             if re.match(r'^knapsack.*', cmd):

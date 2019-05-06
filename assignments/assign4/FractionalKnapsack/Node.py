@@ -3,9 +3,10 @@
 
 # A Python implementetation of a Node class
 class Node:
-    def __init__(self, data, pointer):
+    def __init__(self, data, pointer, previous):
         self.__data = data
         self.__pointer = pointer
+        self.__previous = previous
     
     @property
     # data => Element to be stored
@@ -24,3 +25,11 @@ class Node:
     @pointer.setter
     def pointer(self, obj):
         self.__pointer = obj
+
+    @property
+    def previous(self):
+        return self.__previous
+
+    @previous.setter
+    def previous(self, obj):
+        self.__previous = obj
