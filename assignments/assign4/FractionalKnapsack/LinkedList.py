@@ -53,9 +53,7 @@ class LinkedList:
 
     def append(self, element):
         # Each node should point to the next node
-        node = Node(data=element, pointer=self.head, previous=None)
-        if self.head is not None:
-            self.head.previous = node
+        node = Node(data=element, pointer=self.head)
         self.head = node
         if self.head.pointer is None:
             self.tail = self.head
@@ -102,13 +100,3 @@ class LinkedList:
         temp = node_1.data
         node_1.data = node_2.data
         node_2.data = temp
-        # node_1_temp = node_1
-        # node_2_temp = node_2
-
-        # node_1 = node_2_temp
-        # node_1.pointer = node_1_temp.pointer
-        # node_1.previous = node_1_temp.previous
-            
-        # node_2 = node_1_temp
-        # node_2.pointer = node_2_temp.pointer
-        # node_2.previous = node_2_temp.previous
