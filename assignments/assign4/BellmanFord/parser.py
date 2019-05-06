@@ -58,3 +58,6 @@ class Parser:
                 continue
             else:
                 graph.append(cmd)
+                
+        if len(graph) is not 0:
+            self.__graph_commands.append(graph)

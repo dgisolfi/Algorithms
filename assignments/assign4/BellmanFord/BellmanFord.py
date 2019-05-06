@@ -7,7 +7,6 @@ class BellmanFord:
     def __init__(self, graph, vertex):
         self.__graph = graph
         self.__source_vertex = vertex
-        # self.__source_weight = weight
         self.initSingleSource(self.__graph, self.__source_vertex)
         self.exploreVerticies()
         print(self.CheckForCircularPaths())
@@ -15,18 +14,17 @@ class BellmanFord:
     def __str__(self):
         # convert float back to int here to make it look nicer
         for vertex in self.__graph.vertices:
-            path = ''
+            path = f'{vertex.id} ← '
             v = vertex
             while v.predecessor is not None:
                 path += f'{v.predecessor.id}'
                 v = v.predecessor
                 if v.id  != '1':
-                    path += '<='
-            
-            if path == '':
-                print(f'id: {vertex.id} distance:{int(vertex.distance)} path: to itself')
-            else:
-                print(f'id: {vertex.id} distance:{int(vertex.distance)} path: {path}')
+                    path += ' ← '
+            if path == f'{vertex.id} ← ':
+                path = f'{vertex.id}'
+                    
+            print(f'{self.__source_vertex.id} → {vertex.id} distance: {int(vertex.distance)} path: {path}')
         return ''
 
     def initSingleSource(self, graph, source_vertex):
@@ -38,7 +36,7 @@ class BellmanFord:
         source_vertex.distance = 0
 
     def exploreVerticies(self):
-        for i in range(1, len(self.__graph.vertices)-1):
+        for i in range(1, len(self.__graph.vertices)):
             for edge in self.__graph.edges:
                 self.improvePath(edge.source, edge.target, edge.weight)
 

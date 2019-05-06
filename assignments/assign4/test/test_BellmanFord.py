@@ -3,9 +3,9 @@
 
 import sys
 sys.path.append('..')
-from assign4.parser import Parser
+from assign4.BellmanFord.parser import Parser
+from assign4.BellmanFord.BellmanFord import BellmanFord
 from assign4.DirectedGraph.DirectedGraph import DirectedGraph
-from assign4.BellmanFord import BellmanFord
 
 parser = Parser('./test/graphs2.txt')
 
@@ -17,5 +17,3 @@ for cmds in parser.graph_commands:
 
     bellmanFord = BellmanFord(graph, graph.vertices[0])
     print(bellmanFord)
-
-
