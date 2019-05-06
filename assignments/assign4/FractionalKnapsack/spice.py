@@ -8,7 +8,11 @@ class Spice:
         self.__quantity = quantity
 
     def __str__(self):
-        return f'name={self.name}; price={self.price}; quantity={self.quantity};'
+        # return f'name={self.name}; price={self.price}; quantity={self.quantity};'
+        return self.name
+    
+    def repr(self):
+        return self.name
 
     @property
     def name(self):

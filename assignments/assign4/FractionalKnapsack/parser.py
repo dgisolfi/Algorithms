@@ -5,13 +5,14 @@ import re
 import sys
 from .spice import Spice
 from .knapsack import Knapsack
+from .LinkedList import LinkedList
 
 class Parser:
     def __init__(self, filename):
         self.filename = filename
         self.__commands = []
         self.__knapsacks = []
-        self.__spices = []
+        self.__spices = LinkedList()
         self.parse()
         
     ''' Properties '''
