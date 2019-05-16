@@ -31,7 +31,7 @@ class SelectionSort:
 
             while next_node is not None:
                 # check if the next item is lower the the current minimum
-                if next_node.data.price < minimum.data.price:
+                if next_node.data.price > minimum.data.price:
                     minimum = next_node
                 next_node = next_node.pointer
 

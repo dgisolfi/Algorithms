@@ -8,7 +8,7 @@ class Edge:
         self.__weight = weight
 
     def __str__(self):
-        return f'{self.source}=>{self.target} weight={int(self.weight)}'
+        return f'{self.source} → {self.target} weight={int(self.weight)}'
     
     @property
     def source(self):
