@@ -20,18 +20,17 @@ class GreedyAlgorithm:
         while spice is not None:
             # try to add the spice in its entirety to the Knapsack,
             if (self.knapsack.cur_quantity + int(spice.data.quantity)) <= int(self.knapsack.capacity):
-                print(f'added {spice.data.name}; q={spice.data.quantity}; v={spice.data.price}')
                 self.knapsack.cur_quantity += int(spice.data.quantity)
-                self.knapsack.value += float(spice.data.price)
+                self.knapsack.value +=  int(spice.data.quantity) * float(spice.data.price)
+                print(f'added {spice.data.name}; q={spice.data.quantity}; v={ int(spice.data.quantity) * float(spice.data.price)}')
+
             # if it will cause an overflow, add a fraction of it
             else:
                 remaining_capacity = int(self.knapsack.capacity) - self.knapsack.cur_quantity 
-                fraction_of_spice = round(remaining_capacity/int(spice.data.quantity), 2)
+                fraction_of_spice = remaining_capacity % int(spice.data.quantity)
                 self.knapsack.cur_quantity += fraction_of_spice
-                self.knapsack.value += round((fraction_of_spice * float(spice.data.price)), 2)
-
-                print(f'added {spice.data.name}; q={fraction_of_spice}; v={round(fraction_of_spice * float(spice.data.price), 2)}')
-                # self.knapsack.value += float(spice.data.price)
+                self.knapsack.value += fraction_of_spice * float(spice.data.price)
+                print(f'added {spice.data.name}; q={fraction_of_spice}; v={fraction_of_spice * float(spice.data.price)}')
            
             spice = spice.pointer
 

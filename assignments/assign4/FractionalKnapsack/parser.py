@@ -60,8 +60,8 @@ class Parser:
         # parse all spices and knapsacks
         for cmd in self.commands:
             if re.match(r'^spice.*', cmd):
-                cmd = cmd.replace('spice', '').replace(';', '')
-                attributes = cmd.split()
+                cmd = cmd.replace('spice ', '')
+                attributes = re.sub(r'\s+', '', cmd).split(';')
                 name = attributes[0].split('=')[1]
                 price = attributes[1].split('=')[1]
                 quantity = attributes[2].split('=')[1]
